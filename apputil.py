@@ -5,28 +5,11 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 
-def update_board(board):
-    rows, cols = board.shape
-    new_board = np.zeros_like(board)
-    
-    for i in range(rows):
-        for j in range(cols):
-            neighbors = 0
-            for di in [-1, 0, 1]:
-                for dj in [-1, 0, 1]:
-                    if di == 0 and dj == 0:
-                        continue
-                    ni, nj = (i + di) % rows, (j + dj) % cols
-                    neighbors += board[ni, nj]
-            
-            if board[i, j] == 1:
-                if neighbors in [2, 3]:
-                    new_board[i, j] = 1
-            else:
-                if neighbors == 3:
-                    new_board[i, j] = 1
-    
-    return new_board
+def update_board(current_board):
+    # your code here ...
+    updated_board = current_board
+
+    return updated_board
 
 
 def show_game(game_board, n_steps=10, pause=0.5):
